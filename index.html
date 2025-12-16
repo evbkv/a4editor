@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F0F0F0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-navbutton-color" content="#F0F0F0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="A4 Editor">
+    <meta name="application-name" content="A4 Editor">
+    <meta name="description" content="A minimalistic A4-style text editor for notes.">
+    <title>A4 Editor</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imgs/ico.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="imgs/ico.svg">
+    <link rel="preload" href="fonts/IBMPlexMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+<body>
+    <textarea id="main-textarea" spellcheck="false" autofocus></textarea>
+    <div id="marker"></div>
+    <div id="marker-button"></div>
+    <div id="transparent-bg"></div>
+    <div id="menu-container">
+        <div id="menu">
+            <div id="menu-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M 0 0 L 18 18 M 18 0 L 0 18"></path></svg></div>
+            <img src="imgs/logo.svg" alt="A4 Editor Logo">
+            <div class="menu-item" id="theme-btn">
+                <div class="menu-title">THEME</div>
+                <div class="menu-select">Light</div>
+            </div>
+            <div class="menu-item" id="face-btn">
+                <div class="menu-title">FONT FACE</div>
+                <div id="font-example" class="menu-select">IBM Plex Mono</div>
+            </div>
+            <div class="menu-item" id="size-btn">
+                <div class="menu-title">FONT SIZE</div>
+                <div id="font-size-btn" class="menu-select">Medium</div>
+            </div>
+            <div class="menu-item" id="export-btn">
+                EXPORT
+            </div>
+            <div class="menu-copyright">
+                © A4 Editor by <a href="https://github.com/evbkv" target="_blank">evbkv</a> – 2025, v0.9β
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
