@@ -10,6 +10,26 @@ The editor is built for people who value simplicity, visual harmony, and comfort
 
 The application can be used directly in the browser or installed as a PWA on desktop and mobile devices. An Android APK is also included in the repository.
 
+## Project Philosophy & Origin
+
+A4 Editor was created to solve a very personal problem: the lack of a truly distraction-free writing environment.
+
+The name **A4 Editor** reflects its core concept — a digital equivalent of a blank A4 sheet of paper, familiar to anyone who writes. The goal is simple: remove everything that does not serve the text.
+
+While applications like **iA Writer** and **Calmly Writer** influenced this project, A4 Editor follows a different philosophy. It deliberately does not include paragraph focus mode. In practice, such modes can disrupt the flow of thought by isolating text fragments instead of preserving the integrity of the whole document.
+
+This editor was built primarily:
+- for my own note-taking during work and conferences,
+- and for my wife, a writer who needs a calm and predictable writing space.
+
+Classic tools like Windows Notepad feel outdated and visually uncomfortable, while many modern editors overload the user with formatting options and UI elements. One of the strongest inspirations came from the focus mode in Apple Pages on an old iBook PowerPC.
+
+My interest in minimalist editors goes back to my first computer — the **Apogey BK-01**. One of the first programs I ever wrote was a simple text editor in machine code. It was fast, responsive, and free from unnecessary complexity — qualities that still define A4 Editor today.
+
+Special attention is paid to accessibility, eye comfort, font choice, and layout proportions. The editor uses the golden ratio to create a balanced text area, making long writing sessions less tiring.
+
+A4 Editor is designed for writers, thinkers, and minimalists — and may eventually evolve through integration with professional writing platforms.
+
 ## Key Features
 
 * Progressive Web App with offline support
