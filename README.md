@@ -111,3 +111,7 @@ The project is currently in beta stage. Core functionality is complete, and futu
 ## License
 
 GNU General Public License v3.0
+
+## Screenshot
+
+![Screenshot](screenshot.jpg)
