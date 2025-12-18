@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 140.17 140.17"
- xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1181px" height="1181px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1273.42 1273.42"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
  <defs>
   <style type="text/css">
    <![CDATA[
-    .fil0 {fill:#FFFFFF}
-    .fil1 {fill:#E0E0E0}
-    .fil2 {fill:#E74C3C}
+    .fil0 {fill:#E0E0E0}
+    .fil1 {fill:#E74C3C}
    ]]>
   </style>
  </defs>
  <g id="Layer_x0020_1">
-  <rect class="fil0" width="140.17" height="140.17"/>
-  <rect class="fil1" x="45.64" y="35.51" width="48.89" height="69.14"/>
-  <rect class="fil2" x="45.64" y="35.51" width="2.95" height="69.14"/>
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0" width="1273.42" height="1273.42" rx="225.9" ry="225.9"/>
+  <rect class="fil1" x="305.62" width="178.28" height="1273.42"/>
  </g>
 </svg>
