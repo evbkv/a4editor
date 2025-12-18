@@ -220,6 +220,7 @@ input:focus,
     height: 100%;
     border-radius: none;
     box-shadow: none;
+    border-radius: 0;
   }
     
 }
