@@ -1,4 +1,4 @@
-const CACHE_NAME = 'a4-editor-cache-v5-16.12.2025-10';
+const CACHE_NAME = 'a4-editor-cache-25.12.2025-1';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -11,6 +11,7 @@ const ASSETS_TO_CACHE = [
     './fonts/CourierPrime-Regular.ttf',
     './fonts/Caveat-Regular.ttf',
     './imgs/ico.svg',
+    './imgs/ico.png',
     './imgs/logo.svg'
 ];
 
