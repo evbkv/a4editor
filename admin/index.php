@@ -253,19 +253,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['csrf_token'])) {
     }
 }
 
-// Database connection
+// --- Database connection with auto-creation ---
 $dbFile = __DIR__ . '/../proxy/analytics.db';
+
+// Create the database file if it doesn't exist
 if (!file_exists($dbFile)) {
-    die('Analytics database not found.');
+    touch($dbFile);
 }
 
 try {
     $pdo = new PDO('sqlite:' . $dbFile);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Create the events table if it doesn't exist
+    $pdo->exec("CREATE TABLE IF NOT EXISTS events (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        device_id TEXT,
+        event TEXT,
+        timestamp INTEGER,
+        version TEXT,
+        properties TEXT
+    )");
+    // Create indexes for faster queries
+    $pdo->exec("CREATE INDEX IF NOT EXISTS idx_timestamp ON events(timestamp)");
+    $pdo->exec("CREATE INDEX IF NOT EXISTS idx_device ON events(device_id)");
+    $pdo->exec("CREATE INDEX IF NOT EXISTS idx_event ON events(event)");
 } catch (PDOException $e) {
     error_log('DB connection error: ' . $e->getMessage());
     die('Database error. Please try again later.');
 }
+// --- End of database connection block ---
 
 // Get period and date parameters
 $period = $_GET['period'] ?? 'today';
