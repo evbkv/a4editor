@@ -1,0 +1,15 @@
+# .htaccess for admin directory
+# Prevents direct access to database files and configuration files
+
+<Files "*.db">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "*.sqlite">
+    Order Allow,Deny
+    Deny from all
+</Files>
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>

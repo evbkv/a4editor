@@ -6,7 +6,7 @@ The editor is built for people who value simplicity, visual harmony, and comfort
 
 ## Demo
 
-[Online version](https://evbkv.ru/apps/a4editor)
+[Online version](https://a4editor.evbkv.com/)
 
 The application can be used directly in the browser or installed as a PWA on desktop and mobile devices. An Android APK is also included in the repository.
 
@@ -34,13 +34,21 @@ A4 Editor is designed for writers, thinkers, and minimalists — and may eventua
 
 * Progressive Web App with offline support
 * Client-side text storage using localStorage
-* Automatic saving and manual save control
+* Automatic saving every minute and on visibility change
+* Manual save by tapping the red marker
 * Export notes to plain text files (.txt)
-* Five color themes
-* Five font families
-* Three font sizes
+* Five color themes (White, Light, Sepia, Dark, Black)
+* Five font families (IBM Plex Mono, Sans, Serif, Courier Prime, Caveat)
+* Three font sizes (Small, Medium, Large)
 * Responsive layout for desktop, tablet, and mobile
-* Keyboard shortcuts for common actions
+* Keyboard shortcuts for common actions (Ctrl+S, Ctrl+E)
+* Integrated AI assistant powered by DeepSeek (optional API key)
+* Custom prompt templates for AI actions
+* A‑Z navigation: double-click/long‑press marker to open menu, single-click to save or open AI
+* Back gesture support (popstate) on mobile for closing overlays
+* Anonymous usage analytics (optional, no personal data collected)
+* Admin dashboard to view aggregated statistics (DAU, MAU, event types, etc.)
+* Built‑in donate button (appears after AI response)
 
 ## Design Principles
 
@@ -62,7 +70,7 @@ Available themes:
 4. Dark
 5. Black
 
-Each theme includes carefully selected background and text colors, as well as accent colors for selection and interface elements.
+Each theme includes carefully selected background and text colors, as well as accent colors for selection and interface elements. Dark themes also adjust input fields and modal windows for consistency.
 
 ## Fonts
 
@@ -86,21 +94,59 @@ Font size and family are saved locally and restored on the next launch.
 
 * Ctrl or Cmd + S: Save text
 * Ctrl or Cmd + E: Export text
-* Tab: Insert tab character
-* Red marker: Save changes
-* Gray marker: Open menu
+* Tab: Insert tab character (disabled when any overlay is open)
+* Red marker (top‑right dot): Save changes (single click) or open AI window (when no unsaved changes)
+* Gray marker: Click to open menu (or double‑click/long‑press on any marker)
+* AI window: Enter prompt, press Enter for new line, Ctrl+Enter to send
+* Prompt templates: click a chip to apply, long‑press to edit/delete
+* Clear button: resets input and result fields in AI window
 
-The editor automatically saves changes every minute and when the application loses focus.
+## AI Integration
+
+A4 Editor includes an optional AI assistant powered by DeepSeek. To enable:
+
+1. Open the main menu (double‑click or long‑press the marker)
+2. Select AI Provider → DeepSeek
+3. Enter your DeepSeek API key
+4. The AI window becomes available (single click on the gray marker when no unsaved changes)
+
+The AI can operate on:
+- the entire document, or
+- only the selected text.
+
+Pre‑defined prompt templates can be created, edited, and deleted. After an AI response, action buttons (Change, Insert, Copy) allow you to apply the result.
+
+## Analytics & Admin Dashboard
+
+A4 Editor collects anonymous usage statistics to help improve the application. No personal data (IP, email, text content) is transmitted. Each device generates a random identifier stored in localStorage.
+
+The collected data includes:
+- App launch events
+- AI window openings
+- Prompt sends (only the length of the prompt)
+- Actions taken on AI results (Change, Insert, Copy)
+
+The admin dashboard (available at `/admin/`) provides aggregated metrics:
+- Total events
+- Daily Active Users (DAU)
+- Monthly Active Users (MAU)
+- Unique devices (all‑time)
+- Top versions used
+- Distribution of event types
+
+Access is protected by a simple password (default: `a4admin`). The dashboard uses session authentication, CSRF protection, and rate limiting.
 
 ## Technology Stack
 
 * HTML5
-* CSS3
-* JavaScript
+* CSS3 (with custom properties and responsive design)
+* JavaScript (ES Modules)
 * Service Workers for offline support
 * Web App Manifest for PWA installation
+* PHP (backend for AI proxy and analytics storage)
+* SQLite (lightweight database for analytics)
 
-All data is stored locally in the browser. No server-side processing is used.
+All user data (text content, settings, prompts) is stored locally in the browser. No server-side processing is used for the core editor. The PHP backend only handles AI requests and analytics storage.
 
 ## Installation
 
@@ -113,8 +159,11 @@ All data is stored locally in the browser. No server-side processing is used.
 ### Local Installation
 
 1. Clone the repository
-2. Open `index.html` in a local web server
-3. The app will work offline after the first load
+2. Place the folder in a web server environment (Apache/Nginx with PHP support)
+3. Ensure the `proxy/` directory is writable for SQLite database creation
+4. Open `index.html` in a browser (or access via the server URL)
+
+The app will work offline after the first load.
 
 ### Android
 
@@ -122,7 +171,7 @@ An Android APK file is included in the `android` directory and can be installed 
 
 ## Project Status
 
-The project is currently in beta stage. Core functionality is complete, and future improvements may include refactoring, additional font options, and extended platform support.
+The project is currently in beta stage. Core functionality is complete, and future improvements may include refactoring, additional font options, extended AI providers, and enhanced analytics. The codebase is considered production‑ready for MVP use.
 
 ## Author
 

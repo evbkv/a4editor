@@ -1,7 +1,8 @@
 {
   "name": "A4 Editor",
   "short_name": "A4 Editor",
-  "start_url": "https://evbkv.ru/apps/a4editor/",
+  "start_url": "/a4editor/",
+  "scope": "/a4editor/",
   "display": "standalone",
   "background_color": "#F0F0F0",
   "theme_color": "#F0F0F0",

@@ -1,0 +1,12 @@
+# Root .htaccess for A4 Editor
+# Redirect all requests to index.html except for existing files/directories and the admin folder
+
+RewriteEngine On
+
+# Exclude the admin directory from rewrite rules
+RewriteRule ^admin/ - [L]
+
+# If the request is not for a real file or directory, route to index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
